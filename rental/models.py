@@ -9,6 +9,7 @@ class Properties(models.Model):
     price = models.FloatField()
     status = models.CharField(max_length=30)
     rooms = models.IntegerField()
+    type = models.CharField(max_length=30)
     period = models.CharField(max_length=15)
 
     @classmethod
