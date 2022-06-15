@@ -178,7 +178,7 @@
   <!--/ Carousel Star /-->
   <div class="intro intro-carousel">
     <div id="carousel" class="owl-carousel owl-theme">
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url static 'img/slide-1.jpg'">
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url('{% static "img/slide-1.jpg" %}')">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -201,7 +201,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slide-2.jpg)">
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url('{% static "img/slide-2.jpg" %}')">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -209,7 +209,7 @@
               <div class="row">
                 <div class="col-lg-8">
                   <div class="intro-body">
-                    <p class="intro-title-top"> FourWays Heights  
+                    <p class="intro-title-top"> FourWays Heights
                       <br>Residential </p>
                     <h1 class="intro-title mb-4">
                       <span class="color-b"> </span> FourWays Junction
@@ -224,7 +224,7 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url(img/slide-3.jpg)">
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url('{% static "img/slide-3.jpg" %}')">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -250,7 +250,7 @@
     </div>
   </div>
   <!--/ Carousel end /-->
- 
+
   <!--/ Property Star /-->
   <section class="property-grid grid section-t8">
     <div class="container">
@@ -268,31 +268,31 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row">
       <div class="col-md-8">
       <div class="row">
-        {% for property_item in property %}
+        {% for property_details in property %}
         <div class="col-md-6">
           <div class="card-box-a card-shadow" style="height: 321px;">
             <div class="img-box-a">
-              <a href="#"><img src="{{property_item.propertyphotos.url}}" alt="" class="img-a img-fluid"></a>
+              <a href="{% url 'propertysingle' property_details.id %}"><img src="{{property_details.propertyphotos.url}}" alt="" class="img-a img-fluid"></a>
             </div>
             <div class="card-overlay">
               <div class="card-overlay-b-content">
                 <div class="card-header-a">
                   <p>
-                    <a class="card-title-z" href="">{{ property_item.title}}</a>
+                    <a class="card-title-z" href="{% url 'propertysingle' property_details.id %}">{{ property_details.title}}</a>
                   </p>
                 </div>
                 <div class="card-body-a">
                   <div class="price-box d-flex">
-                    <a href="property-grid.html"><span class="price-aa">{{ property_item.status}}</span></a>
+                    <a href="{% url 'propertysingle' property_details.id %}"><span class="price-aa">{{ property_details.status}}</span></a>
                   </div>
                   <div class="price-box d-flex">
-                    <a href="property-single.html"><span class="price-a">ksh. {{ property_item.price}} | {{ property_item.period}}</span></a>
+                    <a href="{% url 'propertysingle' property_details.id %}"><span class="price-a">ksh. {{ property_details.price}} | {{ property_details.period}}</span></a>
                   </div>
-                  <a href="#" class="link-a">Read more
+                  <a href="{% url 'propertysingle' property_details.id %}" class="link-a">Read more
                     <span class="ion-ios-arrow-forward"></span>
                     <span class="ion-ios-arrow-forward"></span>
                   </a>
@@ -311,7 +311,7 @@
           <div class="card-body">
             <h4 class="card-title">Epuka Shida ya LandLord</h4>
             <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-            
+
           </div>
       </div>
 

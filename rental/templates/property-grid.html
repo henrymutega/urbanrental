@@ -206,29 +206,29 @@
             </form>
           </div>
         </div>
-       </div> 
+       </div>
         <div class="row">
           {% for property_item in property %}
           <div class="col-md-4">
             <div class="card-box-a card-shadow" style="height: 321px;">
               <div class="img-box-a">
-                <a href="property-single.html"><img src="{{property_item.propertyphotos.url}}" alt="" class="img-a img-fluid"></a>
+                <a href="{% url 'propertysingle' property_item.id %}"><img src="{{property_item.propertyphotos.url}}" alt="" class="img-a img-fluid"></a>
               </div>
               <div class="card-overlay">
                 <div class="card-overlay-b-content">
                   <div class="card-header-a">
                     <p>
-                      <a class="card-title-z" href="property-single.html">{{property_item.title}}</a>
+                      <a class="card-title-z" href="{% url 'propertysingle' property_item.id %}">{{property_item.title}}</a>
                     </p>
                   </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <a href="property-single.html"><span class="price-aa">{{property_item.status}}</span></a>
+                      <a href="{% url 'propertysingle' property_item.id %}"><span class="price-aa">{{property_item.status}}</span></a>
                     </div>
                     <div class="price-box d-flex">
-                      <a href="property-single.html"><span class="price-a">ksh. {{property_item.price}} | {{property_item.period}}</span></a>
+                      <a href="{% url 'propertysingle' property_item.id %}"><span class="price-a">ksh. {{property_item.price}} | {{property_item.period}}</span></a>
                     </div>
-                    <a href="property-single.html" class="link-a">Read more
+                    <a href="{% url 'propertysingle' property_item.id %}" class="link-a">Read more
                       <span class="ion-ios-arrow-forward"></span>
                       <span class="ion-ios-arrow-forward"></span>
                     </a>

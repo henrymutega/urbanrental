@@ -8,9 +8,9 @@ class Properties(models.Model):
     description = models.TextField()
     price = models.FloatField()
     status = models.CharField(max_length=30)
-    rooms = models.FloatField()
+    rooms = models.IntegerField()
     period = models.CharField(max_length=15)
-    
+
     @classmethod
     def property_details(cls):
         property = cls.objects.all()
@@ -45,3 +45,17 @@ class About(models.Model):
     def about_details(cls):
         about = cls.objects.all()
         return about
+
+class Homeimgs(models.Model):
+    homeimage = models.ImageField(upload_to = 'home/')
+    title = models.CharField(max_length=60)
+    subtitle = models.CharField(max_length=60)
+    location = models.CharField(max_length=60)
+    type = models.CharField(max_length=60)
+    status = models.CharField(max_length=60)
+    price = models.CharField(max_length=60)
+
+    @classmethod
+    def homeimg_details(cls):
+        homeimgs = cls.objects.all()
+        return homeimgs
