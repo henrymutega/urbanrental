@@ -9,7 +9,7 @@
 //--//-->   STYLES GENERALES
 ======================================*/
 
-body {
+  body {
     font-family: 'Poppins', sans-serif;
     color: #555555;
   }
@@ -23,7 +23,7 @@ body {
     color: #000000;
   }
   
-#logo{
+  #logo{
     line-height: .3em;
     margin-top: 0em;
     padding-top: 0em;
@@ -1102,9 +1102,9 @@ body {
   }
   .price-sale {
     color: #ffffff;
-    background-color: #ff0000;
+    background-color: #ff0000 !important;
     padding: .5rem .5rem;
-    border: 2px solid #ff0000;
+    border: 2px solid #ff0000 !important;
     border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 0.030em;
