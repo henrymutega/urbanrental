@@ -1100,6 +1100,15 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.030em;
   }
+  .price-sale {
+    color: #ffffff;
+    background-color: #ff0000;
+    padding: .5rem .5rem;
+    border: 2px solid #ff0000;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.030em;
+  }
   .price-a {
     color: #ffffff;
     padding: .5rem .5rem;

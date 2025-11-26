@@ -79,7 +79,9 @@
                   </div>
                   <div class="card-body-a">
                     <div class="price-box d-flex">
-                      <a href="{% url 'propertysingle' property_item.id %}"><span class="price-aa">{{property_item.status}}</span></a>
+                      <a href="{% url 'propertysingle' property_item.id %}">
+                        <span class="{% if property_item.status|lower == 'rent' %}price-aa{% elif property_item.status|lower == 'sale' %}price-sale{% else %}price-aa{% endif %}">{{property_item.status}}</span>
+                      </a>
                     </div>
                     <div class="price-box d-flex">
                       <a href="{% url 'propertysingle' property_item.id %}"><span class="price-a">ksh. {{property_item.price}} | {{property_item.period}}</span></a>
